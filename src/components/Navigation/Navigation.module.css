@@ -1,0 +1,21 @@
+.navWrapper {
+  margin-right: 200px;
+}
+.link {
+  display: inline-block;
+  padding: 15px;
+  text-decoration: none;
+  color: #08831d;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.activeLink {
+  color: #08831d;
+  text-shadow: 2px 2px 8px rgba(9, 145, 16, 0.77);
+}
+
+.link:hover,
+.link:focus {
+  color: #55ce10;
+}

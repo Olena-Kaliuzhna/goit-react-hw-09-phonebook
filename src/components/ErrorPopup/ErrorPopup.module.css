@@ -1,0 +1,36 @@
+.popup {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  min-width: 300px;
+  min-height: 50px;
+  padding: 0px 10px;
+  font-size: 16px;
+  font-weight: 900;
+  border-radius: 10px;
+  box-shadow: 10px 14px 8px 0px rgba(243, 155, 155, 0.77);
+  background: red;
+  text-align: center;
+}
+
+.enter {
+  opacity: 0;
+  transform: translateX(150%);
+}
+
+.enterActive {
+  opacity: 1;
+  transform: translateX(-20%);
+  transition: all 250ms linear;
+}
+
+.exit {
+  transform: translateX(-20%);
+  opacity: 1;
+}
+
+.exitActive {
+  opacity: 0;
+  transform: translateX(150%);
+  transition: all 250ms linear;
+}

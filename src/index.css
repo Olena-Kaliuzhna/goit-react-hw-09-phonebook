@@ -1,0 +1,20 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0 auto;
+  /* padding: 15px 0; */
+  background-color: #77f39c;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

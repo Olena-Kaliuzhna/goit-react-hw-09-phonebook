@@ -1,0 +1,29 @@
+.container {
+  min-height: 500px;
+  background-image: url('./b5b942fdcf396117ae6eb9a727ea97cf.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.title {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+  float: right;
+  margin-bottom: 100px;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 54px;
+  letter-spacing: 10px;
+  color: #08831d;
+}
+.titleSpan {
+  padding-top: 30px;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 72px;
+  letter-spacing: 29px;
+  line-height: 91px;
+  color: #08831d;
+  font-weight: 700;
+}

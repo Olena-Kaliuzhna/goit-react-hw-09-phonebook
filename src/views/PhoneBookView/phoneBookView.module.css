@@ -1,0 +1,32 @@
+.container {
+  min-width: 300px;
+  max-width: 600px;
+  min-height: 350px;
+  height: auto;
+  margin: 2% auto;
+  padding: 1%;
+  background-color: #e4fa85;
+  border-radius: 10px;
+  box-shadow: 10px 14px 8px 0px rgba(9, 145, 16, 0.77);
+}
+.contactsWrapper {
+  position: relative;
+}
+
+.title {
+  margin-bottom: 10px;
+  text-align: center;
+  color: #08831d;
+  text-shadow: 4px 3px 12px rgba(9, 145, 16, 0.77);
+}
+
+.appear {
+  opacity: 0;
+  transform: translateX(-50%);
+}
+
+.appearActive {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 500ms linear;
+}
