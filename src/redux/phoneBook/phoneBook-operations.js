@@ -16,6 +16,7 @@ const fetchContacts = () => async dispatch => {
     } else {
       toast.error('Something went wrong! Please try again!');
     }
+    // toast.error('Something went wrong! Please try again!');
   }
 };
 
@@ -33,6 +34,7 @@ const addContact = (name, number) => async dispatch => {
     } else {
       toast.error('Something went wrong! Please try again!');
     }
+    // toast.error('Something went wrong! Please try again!');
   }
 };
 
@@ -53,4 +55,20 @@ const deleteContact = id => async dispatch => {
   }
 };
 
-export default { fetchContacts, addContact, deleteContact };
+const editContact = (id, name, number) => async dispatch => {
+  const contact = { name, number };
+
+  dispatch(actions.editContactRequest());
+  try {
+    const { data } = await api.updateContact(id, contact);
+    dispatch(actions.editContactSuccess(data));
+  } catch (error) {
+    dispatch(actions.editContactError(error.message));
+    if (error.response.status === 400) {
+      toast.error('Contact creation error!');
+    } else {
+      toast.error('Something went wrong! Please try again!');
+    }
+  }
+};
+export default { fetchContacts, addContact, deleteContact, editContact };

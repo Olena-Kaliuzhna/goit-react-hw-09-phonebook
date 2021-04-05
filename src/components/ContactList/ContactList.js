@@ -9,27 +9,32 @@ import anim from '../animation.module.css';
 
 export default function ContactList() {
   const dispatch = useDispatch();
+
   const onDeleteContact = useCallback(
     id => dispatch(phoneBookOperations.deleteContact(id)),
     [dispatch],
   );
+
   const contacts = useSelector(phoneBookSelectors.getFilteredContacts);
 
   return (
-    <TransitionGroup component="ul" className={s.wrapper}>
-      {contacts.map(({ id, name, number }) => {
-        return (
-          <CSSTransition timeout={250} classNames={anim} key={id}>
-            <ContactListItem
-              appear={true}
-              name={name}
-              number={number}
-              unmountOnExit
-              onDelete={() => onDeleteContact(id)}
-            />
-          </CSSTransition>
-        );
-      })}
-    </TransitionGroup>
+    <>
+      <TransitionGroup component="ul" className={s.wrapper}>
+        {contacts.map(({ id, name, number }) => {
+          return (
+            <CSSTransition timeout={250} classNames={anim} key={id}>
+              <ContactListItem
+                appear={true}
+                name={name}
+                number={number}
+                unmountOnExit
+                onDelete={() => onDeleteContact(id)}
+                onEditClick={id}
+              />
+            </CSSTransition>
+          );
+        })}
+      </TransitionGroup>
+    </>
   );
 }

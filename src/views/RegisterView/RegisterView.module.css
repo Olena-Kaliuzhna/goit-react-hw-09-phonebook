@@ -1,10 +1,10 @@
 .container {
-  min-width: 300px;
-  max-width: 400px;
+  min-width: 290px;
+  max-width: 500px;
   min-height: 350px;
   height: auto;
   margin: 2% auto;
-  padding: 1%;
+  padding: 10px;
   background-color: #e4fa85;
   border-radius: 10px;
   box-shadow: 10px 14px 8px 0px rgba(9, 145, 16, 0.77);
@@ -26,10 +26,9 @@
 
 .field {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 20px;
-  align-items: baseline;
-  /* margin-right: 20px; */
 }
 
 .name {
@@ -38,7 +37,6 @@
   font-weight: 700;
   text-align: center;
   color: #08831d;
-  /* text-transform: uppercase; */
 }
 .email {
   margin-right: 50px;
@@ -56,6 +54,7 @@
 }
 
 .input {
+  min-width: 230px;
   max-width: 400px;
   padding: 10px;
   border: 3px solid #0a8f13;
@@ -83,4 +82,13 @@
 .button:hover,
 .button:focus {
   background-color: #55ce10;
+}
+
+@media screen and (min-width: 480px) {
+  .field {
+    flex-direction: row;
+  }
+  .input {
+    min-width: 300px;
+  }
 }

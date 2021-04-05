@@ -1,5 +1,8 @@
 .navWrapper {
-  margin-right: 200px;
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: row; */
+  /* margin-right: 200px; */
 }
 .link {
   display: inline-block;
@@ -18,4 +21,11 @@
 .link:hover,
 .link:focus {
   color: #55ce10;
+}
+
+@media screen and (min-width: 480px) {
+  .navWrapper {
+    /* flex-direction: column; */
+    margin-right: 50px;
+  }
 }

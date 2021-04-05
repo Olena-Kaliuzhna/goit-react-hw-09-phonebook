@@ -12,13 +12,14 @@ const register = credentials => async dispatch => {
     dispatch(authActions.registerSuccess(data));
   } catch (error) {
     dispatch(authActions.registerError(error.message));
-    if (error.response.status === 400) {
-      toast.error('User creation error! Please try again!');
-    } else if (error.response.status === 500) {
-      toast.error('Server error! Please try later!');
-    } else {
-      toast.error('Something went wrong! Please try again!');
-    }
+    // if (error.response.status === 400) {
+    //   toast.error('User creation error! Please try again!');
+    // } else if (error.response.status === 500) {
+    //   toast.error('Server error! Please try later!');
+    // } else {
+    //   toast.error('Something went wrong! Please try again!');
+    // }
+    toast.error('Something went wrong! Please try again!');
   }
 };
 

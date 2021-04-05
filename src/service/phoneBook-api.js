@@ -39,8 +39,8 @@ export function deleteContact(id) {
   return axios.delete(`/contacts/${id}`);
 }
 
-export function updateContact(id) {
-  return axios.patch(`/contacts/${id}`);
+export function updateContact(id, contact) {
+  return axios.patch(`/contacts/${id}`, contact);
 }
 
 export default {
@@ -52,4 +52,5 @@ export default {
   fetchContacts,
   addContact,
   deleteContact,
+  updateContact,
 };

@@ -8,6 +8,7 @@ import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import s from './index.module.css';
 
 const HomePage = lazy(() =>
   import('./views/HomeView/HomeView.js' /*webpackChunkName: 'home-page' */),
@@ -37,20 +38,22 @@ export default function App() {
     <>
       <AppBar />
       <Suspense fallback={<Loader />}>
-        <Switch>
-          <PublicRoute path="/" exact>
-            <HomePage />
-          </PublicRoute>
-          <PublicRoute path="/register" restricted redirectTo="/contacts">
-            <Register />
-          </PublicRoute>
-          <PublicRoute path="/login" restricted redirectTo="/contacts">
-            <Login />
-          </PublicRoute>
-          <PrivateRoute path="/contacts" redirectTo="/login">
-            <PhoneBook />
-          </PrivateRoute>
-        </Switch>
+        <div className={s.container}>
+          <Switch>
+            <PublicRoute path="/" exact>
+              <HomePage />
+            </PublicRoute>
+            <PublicRoute path="/register" restricted redirectTo="/contacts">
+              <Register />
+            </PublicRoute>
+            <PublicRoute path="/login" restricted redirectTo="/contacts">
+              <Login />
+            </PublicRoute>
+            <PrivateRoute path="/contacts" redirectTo="/login">
+              <PhoneBook />
+            </PrivateRoute>
+          </Switch>
+        </div>
       </Suspense>
       <ToastContainer autoClose={3000} />
     </>

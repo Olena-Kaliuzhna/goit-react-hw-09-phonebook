@@ -10,8 +10,10 @@ export default function AppBar() {
   const isAuthenticated = useSelector(authSelectors.getIsAuthenticated);
   return (
     <header className={s.appBar}>
-      <Navigation />
-      {isAuthenticated ? <UserMenu /> : <AuthNav />}
+      <div className={s.wrapper}>
+        <Navigation />
+        {isAuthenticated ? <UserMenu /> : <AuthNav />}
+      </div>
     </header>
   );
 }
